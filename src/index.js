@@ -1,16 +1,39 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+const Header = ({ name }) => {
+    return (
+        <div>
+            <header>Hello {name}</header>
+        </div>
+    )
+}
+const Text = () => {
+    return (
+        <div>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat
+            </p>
+        </div>
+    )
+}
+
 const App = () => {
     return (
         <div>
-            <h1>Hello world </h1>
-            <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto,
-                doloribus. Qui molestias odio sint accusantium ipsa. Vel ullam
-                sit pariatur distinctio. Pariatur mollitia assumenda optio
-                aperiam sint, dolore itaque dolorum!
-            </p>
+            <Header name="Jack" />
+            <Header name="John" />
+            <Header name="Jassica" />
+            <Text />
         </div>
     )
 }

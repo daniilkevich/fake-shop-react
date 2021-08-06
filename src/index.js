@@ -1,40 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import App from './conteiner/App'
 
-const Header = ({ name }) => {
-    return (
-        <div>
-            <header>Hello {name}</header>
-        </div>
-    )
-}
-const Text = () => {
-    return (
-        <div>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat
-            </p>
-        </div>
-    )
-}
-
-const App = () => {
-    return (
-        <div>
-            <Header name="Jack" />
-            <Header name="John" />
-            <Header name="Jassica" />
-            <Text />
-        </div>
-    )
-}
 ReactDOM.render(<App />, document.getElementById('root'))

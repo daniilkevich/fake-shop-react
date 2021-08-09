@@ -8,6 +8,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Container from '@material-ui/core/Container';
 import { red } from '@material-ui/core/colors';
 import Menu from '../../components/Menu/Menu';
+import CartHeader from '../../components/CartHeader/CartHeader';
 
 
 
@@ -40,6 +41,7 @@ const Header = () => {
             Fake Shop
           </Typography>
           <Menu/>
+          <CartHeader/>
         </Toolbar>
               </Container>
        

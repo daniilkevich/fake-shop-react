@@ -24,13 +24,13 @@ const ProductsList = () => {
                 spacing={3}
             >
                 <Grid item xs={12} sm={6} md={4}>
-                    <ProductlistItem />
+                    <ProductlistItem name="iPhone X" />
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
-                    Products 2
+                    <ProductlistItem name="iPhone XS" />
                 </Grid>
                 <Grid item xs={12} sm={6} md={4}>
-                    Products 3
+                    <ProductlistItem name="iPhone 12" />
                 </Grid>
             </Grid>
             

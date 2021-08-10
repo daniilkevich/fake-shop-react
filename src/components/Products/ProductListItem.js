@@ -1,17 +1,19 @@
 
 import React from "react"
 import { Button, Card, CardActions, CardContent } from '@material-ui/core'
-const ProductlistItem = () => {
+import './ProductListItem.css'
+const ProductlistItem = (props) => {
+    console.log(props)
     return <>
         <Card>
-            <CardContent>
-                <h4>iPhone X</h4>
+            <CardContent className="product">
+                <h4>{props.name}</h4>
                 <p>This is iPhone X</p>
                 <p>Type: phone</p>
                 <p>Capacity: 64GB</p>
-                <p>$ 500</p>
+                <div className="product-price">$ 500</div>
             </CardContent>
-            <CardActions>
+            <CardActions className="product-btn">
                     <Button variant="contained" color="primary">Add to Cart</Button>
                 </CardActions>
         </Card>

@@ -13,7 +13,7 @@ const useStyles = makeStyles({
 
 
 const ProductsList = () => {
-   const classes = useStyles() 
+   const classes = useStyles()   
     return (
         <>
          <Typography variant="h5" component="h1" align="center" className={classes.h1}>Products List</Typography>

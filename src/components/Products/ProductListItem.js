@@ -8,10 +8,10 @@ const ProductlistItem = (props) => {
         <Card>
             <CardContent className="product">
                 <h4>{props.name}</h4>
-                <p>This is iPhone X</p>
-                <p>Type: phone</p>
-                <p>Capacity: 64GB</p>
-                <div className="product-price">$ 500</div>
+                <p>{props.description}</p>
+                <p>Type: {props.type}</p>
+                <p>Capacity: {props.capacity}GB</p>
+                <div className="product-price">$ {props.price}</div>
             </CardContent>
             <CardActions className="product-btn">
                     <Button variant="contained" color="primary">Add to Cart</Button>

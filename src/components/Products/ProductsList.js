@@ -2,6 +2,7 @@ import React from 'react'
 import { Grid, makeStyles } from '@material-ui/core'
 import Typography from '@material-ui/core/Typography'
 import ProductlistItem from './ProductListItem'
+import productsArray from './productsArray'
 
 const useStyles = makeStyles({
     h1: {
@@ -22,16 +23,15 @@ const ProductsList = () => {
                 justifyContent="space-evenly"
                 alignItems="center"
                 spacing={3}
-            >
-                <Grid item xs={12} sm={6} md={4}>
-                    <ProductlistItem name="iPhone X" />
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                    <ProductlistItem name="iPhone XS" />
-                </Grid>
-                <Grid item xs={12} sm={6} md={4}>
-                    <ProductlistItem name="iPhone 12" />
-                </Grid>
+            >  
+                {
+                    productsArray.map(product => (
+                        <Grid item xs={12} sm={6} md={4}>
+                            <ProductlistItem name={product.name} description={product.description} type={product.type} capacity={product.capacity} price={product.price}/>
+                        </Grid>
+                    ))
+                }
+                
             </Grid>
             
             

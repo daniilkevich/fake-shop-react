@@ -25,10 +25,10 @@ const ProductsList = () => {
                 spacing={3}
             >  
                 {
-                    productsArray.map(({id, name, description, type, capacity, price}) =>  (
+                    productsArray.map(({id, name, description, type, capacity, price, image}) =>  (
                         <Grid item xs={12} sm={6} md={4} key={id}>
                             
-                            <ProductlistItem name={name} description={description} type={type} capacity={capacity} price={price}/>
+                            <ProductlistItem name={name} description={description} type={type} capacity={capacity} price={price} image={image}/>
                         </Grid>
                     ))
                     

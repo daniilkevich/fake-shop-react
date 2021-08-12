@@ -3,11 +3,14 @@ import React from "react"
 import { Button, Card, CardActions, CardContent } from '@material-ui/core'
 import './ProductListItem.css'
 import PropTypes from 'prop-types'; 
-const ProductlistItem = ({name, description, type, capacity, price}) => {
+const ProductlistItem = ({name, description, type, capacity, price, image}) => {
     
     return <>
         <Card>
             <CardContent className="product">
+                <div className="product-img">
+                        <img src={image} alt={name} />
+                    </div>
                 <h4>{name}</h4>
                 <p>{description}</p>
                 <p>Type: {type}</p>
@@ -28,6 +31,7 @@ ProductlistItem.propTypes = {
     type :PropTypes.string.isRequired,
     capacity:PropTypes.number.isRequired,
     price:PropTypes.number.isRequired,
+    image:PropTypes.string
 }
 ProductlistItem.defaultProps = {
     description: "No description ...",

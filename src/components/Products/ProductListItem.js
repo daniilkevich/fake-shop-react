@@ -2,6 +2,7 @@
 import React from "react"
 import { Button, Card, CardActions, CardContent } from '@material-ui/core'
 import './ProductListItem.css'
+import PropTypes from 'prop-types'; 
 const ProductlistItem = ({name, description, type, capacity, price}) => {
     
     return <>
@@ -20,5 +21,12 @@ const ProductlistItem = ({name, description, type, capacity, price}) => {
     </>
 
     
+}
+ProductlistItem.propTypes = {
+    name: PropTypes.string,
+    description: PropTypes.string,
+    type :PropTypes.string,
+    capacity:PropTypes.number,
+    price:PropTypes.number,
 }
 export default ProductlistItem

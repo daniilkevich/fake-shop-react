@@ -36,6 +36,7 @@ const ProductlistItem = ({
                         <Button
                             variant="outlined"
                             onClick={() => setCount(count - 1)}
+                            disabled={count <= 1}
                         >
                             -
                         </Button>
@@ -47,6 +48,7 @@ const ProductlistItem = ({
                         <Button
                             variant="outlined"
                             onClick={() => setCount(count + 1)}
+                            disabled={count >= 10}
                         >
                             +
                         </Button>

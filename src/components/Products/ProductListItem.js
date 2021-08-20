@@ -1,47 +1,76 @@
-
-import React from "react"
-import { Button, Card, CardActions, CardContent, TextField } from '@material-ui/core'
+import React from 'react'
+import {
+    Button,
+    Card,
+    CardActions,
+    CardContent,
+    TextField,
+} from '@material-ui/core'
 import './ProductListItem.css'
-import PropTypes from 'prop-types'; 
+import PropTypes from 'prop-types'
+import { useState } from 'react'
 
-const ProductlistItem = ({name, description, type, capacity, price, image}) => {
-    
-    return <>
-        <Card>
-            <CardContent className="product">
-                <div className="product-img">
+const ProductlistItem = ({
+    name,
+    description,
+    type,
+    capacity,
+    price,
+    image,
+}) => {
+    const [count, setCount] = useState(1)
+    return (
+        <>
+            <Card>
+                <CardContent className="product">
+                    <div className="product-img">
                         <img src={image} alt={name} />
                     </div>
-                <h4>{name}</h4>
-                <p>{description}</p>
-                <p>Type: {type}</p>
-                <p>Capacity: {capacity}GB</p>
-                <div className="product-price">$ {price}</div>
-                <div className="product-quantity"></div>
-                <div className="product-quantity">
-                        <Button variant="outlined">-</Button>
-                        <TextField variant="outlined" size="small" value={1} />
-                        <Button variant="outlined">+</Button>
+                    <h4>{name}</h4>
+                    <p>{description}</p>
+                    <p>Type: {type}</p>
+                    <p>Capacity: {capacity}GB</p>
+                    <div className="product-price">$ {price}</div>
+                    <div className="product-quantity"></div>
+                    <div className="product-quantity">
+                        <Button
+                            variant="outlined"
+                            onClick={() => setCount(count - 1)}
+                        >
+                            -
+                        </Button>
+                        <TextField
+                            variant="outlined"
+                            size="small"
+                            value={count}
+                        />
+                        <Button
+                            variant="outlined"
+                            onClick={() => setCount(count + 1)}
+                        >
+                            +
+                        </Button>
                     </div>
-            </CardContent>
-            <CardActions className="product-btn">
-                    <Button variant="contained" color="primary">Add to Cart</Button>
+                </CardContent>
+                <CardActions className="product-btn">
+                    <Button variant="contained" color="primary">
+                        Add to Cart
+                    </Button>
                 </CardActions>
-        </Card>
-    </>
-
-    
+            </Card>
+        </>
+    )
 }
 ProductlistItem.propTypes = {
     name: PropTypes.string.isRequired,
     description: PropTypes.string,
-    type :PropTypes.string.isRequired,
-    capacity:PropTypes.number.isRequired,
-    price:PropTypes.number.isRequired,
-    image:PropTypes.string
+    type: PropTypes.string.isRequired,
+    capacity: PropTypes.number.isRequired,
+    price: PropTypes.number.isRequired,
+    image: PropTypes.string,
 }
 ProductlistItem.defaultProps = {
-    description: "No description ...",
+    description: 'No description ...',
 }
 
 export default ProductlistItem

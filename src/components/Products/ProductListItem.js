@@ -17,6 +17,7 @@ const ProductlistItem = ({
     capacity,
     price,
     image,
+    addProductToCart,
 }) => {
     const [count, setCount] = useState(1)
     return (
@@ -55,7 +56,11 @@ const ProductlistItem = ({
                     </div>
                 </CardContent>
                 <CardActions className="product-btn">
-                    <Button variant="contained" color="primary">
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        onClick={() => addProductToCart(count, price)}
+                    >
                         Add to Cart
                     </Button>
                 </CardActions>

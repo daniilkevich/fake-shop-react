@@ -11,32 +11,49 @@ const useStyles = makeStyles({
     },
 })
 
-
-const ProductsList = () => {
-   const classes = useStyles()   
+const ProductsList = ({ addProductToCart }) => {
+    const classes = useStyles()
     return (
         <>
-         <Typography variant="h5" component="h1" align="center" className={classes.h1}>Products List</Typography>
-             <Grid
+            <Typography
+                variant="h5"
+                component="h1"
+                align="center"
+                className={classes.h1}
+            >
+                Products List
+            </Typography>
+            <Grid
                 container
                 direction="row"
                 justifyContent="space-evenly"
                 alignItems="center"
                 spacing={3}
-            >  
-                {
-                    productsArray.map(({id, name, description, type, capacity, price, image}) =>  (
+            >
+                {productsArray.map(
+                    ({
+                        id,
+                        name,
+                        description,
+                        type,
+                        capacity,
+                        price,
+                        image,
+                    }) => (
                         <Grid item xs={12} sm={6} md={4} key={id}>
-                            
-                            <ProductlistItem name={name} description={description} type={type} capacity={capacity} price={price} image={image}/>
+                            <ProductlistItem
+                                name={name}
+                                description={description}
+                                type={type}
+                                capacity={capacity}
+                                price={price}
+                                image={image}
+                                addProductToCart={addProductToCart}
+                            />
                         </Grid>
-                    ))
-                    
-                }
-                
+                    )
+                )}
             </Grid>
-            
-            
         </>
     )
 }

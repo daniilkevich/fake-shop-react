@@ -4,21 +4,19 @@ import Header from './Header/Header'
 import Main from './Main/Main'
 
 const App = () => {
-    const [cartData, setCartData] = useState({
-        totalCount: 0,
-        totalPrice: 0,
+    const [productsInCart, setProductsInCart] = useState({
+        1: 5,
+        2: 3,
     })
+    
     const addProductToCart = (count, price) => {
-        setCartData({
-            totalCount: cartData.totalCount + count,
-            totalPrice: cartData.totalPrice + count * price,
-        })
+        
     }
 
     return (
         <>
             <CssBaseline />
-            <Header cartData={cartData} />
+            <Header productsInCart={productsInCart}  />
             <button onClick={() => addProductToCart(5, 1000)}>
                 Add to cart
             </button>

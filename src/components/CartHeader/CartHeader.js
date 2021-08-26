@@ -1,11 +1,16 @@
 import React from 'react'
+import { keys } from 'lodash'
 
-const CartHeader = ({ totalCount, totalPrice }) => {
+const CartHeader = ({ productsInCart }) => {
     return (
         <div>
-            <div>{totalCount}</div>
-            <div>$ {totalPrice}</div>
+            {keys(productsInCart).map((id) => (
+                <div>
+                    {id} : {productsInCart[id]}
+                </div>
+            ))}
         </div>
     )
 }
+
 export default CartHeader

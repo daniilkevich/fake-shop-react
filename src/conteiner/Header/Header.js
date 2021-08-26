@@ -22,9 +22,9 @@ const useStyles = makeStyles({
     },
 })
 
-const Header = ({ cartData }) => {
+const Header = ({ productsInCart }) => {
     const classes = useStyles()
-    console.log(cartData)
+
     return (
         <>
             <div className={classes.root}>
@@ -43,10 +43,7 @@ const Header = ({ cartData }) => {
                                 Fake Shop
                             </Typography>
                             <Menu />
-                            <CartHeader
-                                totalCount={cartData.totalCount}
-                                totalPrice={cartData.totalPrice}
-                            />
+                            <CartHeader productsInCart={productsInCart} />
                         </Toolbar>
                     </Container>
                 </AppBar>

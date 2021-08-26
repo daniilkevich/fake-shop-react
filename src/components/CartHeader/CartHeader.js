@@ -5,7 +5,7 @@ const CartHeader = ({ productsInCart }) => {
     return (
         <div>
             {keys(productsInCart).map((id) => (
-                <div>
+                <div key={id}>
                     {id} : {productsInCart[id]}
                 </div>
             ))}

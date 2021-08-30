@@ -16,11 +16,22 @@ console.log(productsArray)
 const CartHeader = ({ productsInCart }) => {
     return (
         <div>
-            {keys(productsInCart).map((id) => (
-                <div key={id}>
-                    {productsObject[id].name} : {productsInCart[id]}
-                </div>
-            ))}
+            <div>
+                {keys(productsInCart).map((id) => (
+                    <div key={id}>
+                        {productsObject[id].name} : {productsInCart[id]}
+                    </div>
+                ))}
+            </div>
+            <div>
+                Total:
+                {keys(productsInCart).reduce(
+                    (sum, id) =>
+                        sum + productsInCart[id] * productsObject[id].price,
+                    0
+                )}
+                $
+            </div>
         </div>
     )
 }

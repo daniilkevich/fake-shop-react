@@ -8,18 +8,19 @@ const App = () => {
         1: 5,
         2: 3,
     })
-    
-    const addProductToCart = (count, price) => {
-        
+
+    const addProductToCart = (id, count) => {
+        setProductsInCart({
+            ...productsInCart,
+            [id]: (productsInCart[id] || 0) + count,
+        })
     }
 
     return (
         <>
             <CssBaseline />
-            <Header productsInCart={productsInCart}  />
-            <button onClick={() => addProductToCart(5, 1000)}>
-                Add to cart
-            </button>
+            <Header productsInCart={productsInCart} />
+            <button onClick={() => addProductToCart(1, 5)}>Add to cart</button>
             <Main addProductToCart={addProductToCart} />
         </>
     )

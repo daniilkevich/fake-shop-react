@@ -42,6 +42,7 @@ const ProductsList = ({ addProductToCart }) => {
                     }) => (
                         <Grid item xs={12} sm={6} md={4} key={id}>
                             <ProductlistItem
+                                id={id}
                                 name={name}
                                 description={description}
                                 type={type}

@@ -11,6 +11,7 @@ import PropTypes from 'prop-types'
 import { useState } from 'react'
 
 const ProductlistItem = ({
+    id,
     name,
     description,
     type,
@@ -59,7 +60,7 @@ const ProductlistItem = ({
                     <Button
                         variant="contained"
                         color="primary"
-                        onClick={() => addProductToCart(count, price)}
+                        onClick={() => addProductToCart(id, count)}
                     >
                         Add to Cart
                     </Button>

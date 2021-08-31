@@ -7,7 +7,7 @@ import CartPage from '../../pajes/Cart/CartPage'
 import ShippingPage from '../../pajes/Shipping/ShippingPaje'
 import PaymentPage from '../../pajes/Payment/PaymentPaje'
 
-const Main = ({ addProductToCart }) => {
+const Main = ({ addProductToCart, productsInCart }) => {
     return (
         <>
             <Container maxWidth="lg">
@@ -18,7 +18,11 @@ const Main = ({ addProductToCart }) => {
                         <ProductsList addProductToCart={addProductToCart} />
                     )}
                 />
-                <Route path="/cart" component={CartPage} />
+                <Route
+                    path="/cart"
+                    render={() => <CartPage productsInCart={productsInCart} />}
+                />
+
                 <Route path="/shipping" component={ShippingPage} />
                 <Route path="/payment" component={PaymentPage} />
             </Container>

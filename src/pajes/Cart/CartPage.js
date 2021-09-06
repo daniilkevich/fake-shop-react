@@ -1,15 +1,7 @@
-import { Typography } from '@material-ui/core'
 import React from 'react'
-import { keys } from 'lodash'
-import productsArray from '../../components/Products/productsArray'
-
-const productsObject = productsArray.reduce(
-    (obj, product) => ({
-        ...obj,
-        [product.id]: product,
-    }),
-    {}
-)
+import { Typography } from '@material-ui/core'
+import CartTotal from '../../components/Cart/CartTotal'
+import CartProductList from '../../components/Cart/CartProductList'
 
 const CartPage = ({ productsInCart }) => {
     return (
@@ -17,24 +9,8 @@ const CartPage = ({ productsInCart }) => {
             <Typography variant="h4" component="h1" align="center">
                 Cart
             </Typography>
-            <div>
-                <div>
-                    {keys(productsInCart).map((id) => (
-                        <div key={id}>
-                            {productsObject[id].name} : {productsInCart[id]}
-                        </div>
-                    ))}
-                </div>
-                <div>
-                    Total:
-                    {keys(productsInCart).reduce(
-                        (sum, id) =>
-                            sum + productsInCart[id] * productsObject[id].price,
-                        0
-                    )}
-                    $
-                </div>
-            </div>
+            <CartProductList productsInCart={productsInCart} />
+            <CartTotal productsInCart={productsInCart} />
         </>
     )
 }

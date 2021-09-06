@@ -6,7 +6,7 @@ const productsArray = [
         type: 'phone',
         capacity: 64,
         price: 1500,
-        image:"/imajes/iphonegold.jpg"
+        image: '/imajes/iphonegold.jpg',
     },
     {
         id: 2,
@@ -15,7 +15,7 @@ const productsArray = [
         type: 'phone',
         capacity: 128,
         price: 2500,
-        image:"/imajes/iphoneblue.jpg"
+        image: '/imajes/iphoneblue.jpg',
     },
     {
         id: 3,
@@ -24,7 +24,7 @@ const productsArray = [
         type: 'phone',
         capacity: 64,
         price: 1500,
-        image:"/imajes/iphoneblack.jpg"
+        image: '/imajes/iphoneblack.jpg',
     },
     {
         id: 4,
@@ -33,7 +33,7 @@ const productsArray = [
         type: 'phone',
         capacity: 128,
         price: 2000,
-        image:"/imajes/iphonewhite.jpg"
+        image: '/imajes/iphonewhite.jpg',
     },
     {
         id: 5,
@@ -42,7 +42,7 @@ const productsArray = [
         type: 'phone',
         capacity: 64,
         price: 500,
-        image:"/imajes/iphonewhite.jpg"
+        image: '/imajes/iphonewhite.jpg',
     },
     {
         id: 6,
@@ -51,8 +51,15 @@ const productsArray = [
         type: 'phone',
         capacity: 128,
         price: 1500,
-        image:"/imajes/iphonewhite.jpg"
+        image: '/imajes/iphonewhite.jpg',
     },
-    
 ]
+export const getProductsObject = (array) =>
+    array.reduce(
+        (obj, product) => ({
+            ...obj,
+            [product.id]: product,
+        }),
+        {}
+    )
 export default productsArray

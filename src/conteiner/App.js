@@ -20,7 +20,7 @@ const App = () => {
         <>
             <CssBaseline />
             <Header productsInCart={productsInCart} />
-            <button onClick={() => addProductToCart(1, 5)}>Add to cart</button>
+
             <Main
                 addProductToCart={addProductToCart}
                 productsInCart={productsInCart}

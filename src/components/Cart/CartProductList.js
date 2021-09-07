@@ -4,6 +4,7 @@ import { keys } from 'lodash'
 import CartProductListItem from './CartProductListItem'
 
 const CartProductList = ({
+    removeProductFromCart,
     productsInCart,
     productsObject = getProductsObject(productsArray),
     CartItem = CartProductListItem,
@@ -15,6 +16,7 @@ const CartProductList = ({
                     key={id}
                     product={productsObject[id]}
                     productCount={productsInCart[id]}
+                    removeProductFromCart={removeProductFromCart}
                 />
             ))}
         </>

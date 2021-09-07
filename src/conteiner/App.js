@@ -16,14 +16,20 @@ const App = () => {
         })
     }
 
+    const removeProductFromCart = (id) => {
+        const prevProductsInCart = { ...productsInCart }
+        delete prevProductsInCart[id]
+        return setProductsInCart(prevProductsInCart)
+    }
     return (
         <>
             <CssBaseline />
             <Header productsInCart={productsInCart} />
-
+            
             <Main
                 addProductToCart={addProductToCart}
                 productsInCart={productsInCart}
+                removeProductFromCart={removeProductFromCart}
             />
         </>
     )

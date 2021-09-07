@@ -1,7 +1,8 @@
 import React from 'react'
-import { Typography } from '@material-ui/core'
+import { Grid, Typography } from '@material-ui/core'
 import CartTotal from '../../components/Cart/CartTotal'
 import CartProductList from '../../components/Cart/CartProductList'
+import CartProductListItemExtended from '../../components/Cart/CartProductListItemExtended'
 
 const CartPage = ({ productsInCart }) => {
     return (
@@ -9,7 +10,13 @@ const CartPage = ({ productsInCart }) => {
             <Typography variant="h4" component="h1" align="center">
                 Cart
             </Typography>
-            <CartProductList productsInCart={productsInCart} />
+            <Grid container spacing={3}>
+                <CartProductList
+                    productsInCart={productsInCart}
+                    CartItem={CartProductListItemExtended}
+                />
+            </Grid>
+            
             <CartTotal productsInCart={productsInCart} />
         </>
     )

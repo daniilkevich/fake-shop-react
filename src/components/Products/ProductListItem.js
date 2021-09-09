@@ -9,6 +9,9 @@ import {
 import './ProductListItem.css'
 import PropTypes from 'prop-types'
 import { useState } from 'react'
+import Quantity from '../Quantity/Quantity'
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
+import FavoriteIcon from '@material-ui/icons/Favorite'
 
 const ProductlistItem = ({
     id,
@@ -21,6 +24,13 @@ const ProductlistItem = ({
     addProductToCart,
 }) => {
     const [count, setCount] = useState(1)
+    const onDecrementClick = () => {
+        setCount(count - 1)
+    }
+
+    const onIncrementClick = () => {
+        setCount(count + 1)
+    }
     return (
         <>
             <Card>
@@ -28,33 +38,19 @@ const ProductlistItem = ({
                     <div className="product-img">
                         <img src={image} alt={name} />
                     </div>
+                    <Button>
+                        {isLiked ? <FavoriteIcon /> : <FavoriteBorderIcon />}
+                    </Button>
                     <h4>{name}</h4>
                     <p>{description}</p>
                     <p>Type: {type}</p>
                     <p>Capacity: {capacity}GB</p>
                     <div className="product-price">$ {price}</div>
-                    <div className="product-quantity"></div>
-                    <div className="product-quantity">
-                        <Button
-                            variant="outlined"
-                            onClick={() => setCount(count - 1)}
-                            disabled={count <= 1}
-                        >
-                            -
-                        </Button>
-                        <TextField
-                            variant="outlined"
-                            size="small"
-                            value={count}
-                        />
-                        <Button
-                            variant="outlined"
-                            onClick={() => setCount(count + 1)}
-                            disabled={count >= 10}
-                        >
-                            +
-                        </Button>
-                    </div>
+                    <Quantity
+                        count={count}
+                        onDecrementClick={onDecrementClick}
+                        onIncrementClick={onIncrementClick}
+                    />
                 </CardContent>
                 <CardActions className="product-btn">
                     <Button

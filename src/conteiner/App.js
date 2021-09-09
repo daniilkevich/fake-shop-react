@@ -8,6 +8,10 @@ const App = () => {
         1: 5,
         2: 3,
     })
+    const [likeButtonsState, setLikeButtonsState] = useState({
+        1: true,
+        2: true,
+    })
 
     const addProductToCart = (id, count) => {
         setProductsInCart({
@@ -21,15 +25,23 @@ const App = () => {
         delete prevProductsInCart[id]
         return setProductsInCart(prevProductsInCart)
     }
+    const changeProductQuantity = (id, count) => {
+        setProductsInCart({
+            ...productsInCart,
+            [id]: count,
+        })
+    }
+
     return (
         <>
             <CssBaseline />
             <Header productsInCart={productsInCart} />
-            
+
             <Main
                 addProductToCart={addProductToCart}
                 productsInCart={productsInCart}
                 removeProductFromCart={removeProductFromCart}
+                changeProductQuantity={changeProductQuantity}
             />
         </>
     )

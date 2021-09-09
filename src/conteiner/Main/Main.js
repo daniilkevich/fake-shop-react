@@ -7,7 +7,12 @@ import CartPage from '../../pajes/Cart/CartPage'
 import ShippingPage from '../../pajes/Shipping/ShippingPaje'
 import PaymentPage from '../../pajes/Payment/PaymentPaje'
 
-const Main = ({ addProductToCart, productsInCart, removeProductFromCart }) => {
+const Main = ({
+    addProductToCart,
+    productsInCart,
+    removeProductFromCart,
+    changeProductQuantity,
+}) => {
     return (
         <>
             <Container maxWidth="lg">
@@ -24,6 +29,7 @@ const Main = ({ addProductToCart, productsInCart, removeProductFromCart }) => {
                         <CartPage
                             productsInCart={productsInCart}
                             removeProductFromCart={removeProductFromCart}
+                            changeProductQuantity={changeProductQuantity}
                         />
                     )}
                 />

@@ -4,7 +4,11 @@ import CartTotal from '../../components/Cart/CartTotal'
 import CartProductList from '../../components/Cart/CartProductList'
 import CartProductListItemExtended from '../../components/Cart/CartProductListItemExtended'
 
-const CartPage = ({ productsInCart, removeProductFromCart }) => {
+const CartPage = ({
+    productsInCart,
+    removeProductFromCart,
+    changeProductQuantity,
+}) => {
     return (
         <>
             <Typography variant="h4" component="h1" align="center">
@@ -15,6 +19,7 @@ const CartPage = ({ productsInCart, removeProductFromCart }) => {
                     productsInCart={productsInCart}
                     CartItem={CartProductListItemExtended}
                     removeProductFromCart={removeProductFromCart}
+                    changeProductQuantity={changeProductQuantity}
                 />
             </Grid>
 

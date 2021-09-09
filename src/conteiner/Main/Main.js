@@ -12,6 +12,8 @@ const Main = ({
     productsInCart,
     removeProductFromCart,
     changeProductQuantity,
+    changeLike,
+    likeButtonsState,
 }) => {
     return (
         <>
@@ -20,7 +22,11 @@ const Main = ({
                     path="/"
                     exact
                     render={() => (
-                        <ProductsList addProductToCart={addProductToCart} />
+                        <ProductsList
+                            addProductToCart={addProductToCart}
+                            changeLike={changeLike}
+                            likeButtonsState={likeButtonsState}
+                        />
                     )}
                 />
                 <Route

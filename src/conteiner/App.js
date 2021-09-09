@@ -32,6 +32,12 @@ const App = () => {
         })
     }
 
+    const changeLike = (id) => {
+        setLikeButtonsState((prevState) => ({
+            ...prevState,
+            [id]: !prevState[id],
+        }))
+    }
     return (
         <>
             <CssBaseline />
@@ -42,6 +48,8 @@ const App = () => {
                 productsInCart={productsInCart}
                 removeProductFromCart={removeProductFromCart}
                 changeProductQuantity={changeProductQuantity}
+                changeLike={changeLike}
+                likeButtonsState={likeButtonsState}
             />
         </>
     )

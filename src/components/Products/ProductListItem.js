@@ -22,6 +22,8 @@ const ProductlistItem = ({
     price,
     image,
     addProductToCart,
+    isLiked = false,
+    changeLike,
 }) => {
     const [count, setCount] = useState(1)
     const onDecrementClick = () => {
@@ -38,7 +40,7 @@ const ProductlistItem = ({
                     <div className="product-img">
                         <img src={image} alt={name} />
                     </div>
-                    <Button>
+                    <Button onClick={() => changeLike(id)}>
                         {isLiked ? <FavoriteIcon /> : <FavoriteBorderIcon />}
                     </Button>
                     <h4>{name}</h4>

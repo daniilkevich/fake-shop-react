@@ -12,6 +12,7 @@ import { useState } from 'react'
 import Quantity from '../Quantity/Quantity'
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import FavoriteIcon from '@material-ui/icons/Favorite'
+import { connect } from 'react-redux'
 
 const ProductlistItem = ({
     id,
@@ -23,7 +24,8 @@ const ProductlistItem = ({
     image,
     addProductToCart,
     isLiked = false,
-    changeLike,
+    removeLike,
+    addLike,
 }) => {
     const [count, setCount] = useState(1)
     const onDecrementClick = () => {
@@ -40,7 +42,9 @@ const ProductlistItem = ({
                     <div className="product-img">
                         <img src={image} alt={name} />
                     </div>
-                    <Button onClick={() => changeLike(id)}>
+                    <Button
+                        onClick={() => (isLiked ? removeLike(id) : addLike(id))}
+                    >
                         {isLiked ? <FavoriteIcon /> : <FavoriteBorderIcon />}
                     </Button>
                     <h4>{name}</h4>
@@ -78,5 +82,12 @@ ProductlistItem.propTypes = {
 ProductlistItem.defaultProps = {
     description: 'No description ...',
 }
+const mapStateToProps = (state, { id }) => ({
+    isLiked: state[id],
+})
+const mapDispatchToProps = (dispatch) => ({
+    addLike: (id) => dispatch({ type: 'LIKE', id }),
+    removeLike: (id) => dispatch({ type: 'DISLIKE', id }),
+})
 
-export default ProductlistItem
+export default connect(mapStateToProps, mapDispatchToProps)(ProductlistItem)

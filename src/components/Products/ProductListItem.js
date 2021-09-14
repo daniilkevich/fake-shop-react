@@ -83,7 +83,7 @@ ProductlistItem.defaultProps = {
     description: 'No description ...',
 }
 const mapStateToProps = (state, { id }) => ({
-    isLiked: state[id],
+    isLiked: state.likeProducts[id],
 })
 const mapDispatchToProps = (dispatch) => ({
     addLike: (id) => dispatch({ type: 'LIKE', id }),
